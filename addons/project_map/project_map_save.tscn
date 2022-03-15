@@ -1,0 +1,576 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://addons/project_map/project_map.gd" type="Script" id=1]
+[ext_resource path="res://addons/project_map/node_selected.stylebox" type="StyleBox" id=2]
+[ext_resource path="res://addons/project_map/pm_file_node.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/project_map/node.stylebox" type="StyleBox" id=4]
+[ext_resource path="res://addons/project_map/pm_file_node.gd" type="Script" id=5]
+[ext_resource path="res://addons/project_map/pm_comment_node.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/project_map/pm_comment_node.gd" type="Script" id=7]
+[ext_resource path="res://addons/project_map/pm_group_node.gd" type="Script" id=8]
+[ext_resource path="res://addons/project_map/group_selected.stylebox" type="StyleBox" id=9]
+[ext_resource path="res://addons/project_map/pm_group_node.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/project_map/group.stylebox" type="StyleBox" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[node name="ProjectMap" type="GraphEdit"]
+margin_right = 1893.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 500, 500 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/bg = SubResource( 1 )
+scroll_offset = Vector2( -607.431, -343.347 )
+snap_distance = 32
+zoom = 0.631249
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GroupNode6" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 486.232
+margin_top = 787.746
+margin_right = 838.232
+margin_bottom = 1011.75
+rect_min_size = Vector2( 352, 224 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( -192, 704 )
+resizable = true
+selected = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "GLOBAL"
+
+[node name="GroupNode5" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 466.032
+margin_top = 525.146
+margin_right = 758.032
+margin_bottom = 813.147
+rect_min_size = Vector2( 256, 288 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( -224, 288 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Main Stuff"
+
+[node name="CommentNode" type="GraphNode" parent="." instance=ExtResource( 6 )]
+margin_left = 795.543
+margin_top = 151.447
+margin_right = 1428.54
+margin_bottom = 366.447
+rect_min_size = Vector2( 581, 197 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = SubResource( 6 )
+custom_styles/comment = SubResource( 7 )
+offset = Vector2( 298, -304 )
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+comment_text = "Hypercasual version of \"I Threw It\"?
+Did you really throw it tho?
+Woo"
+comment_rect = Vector2( 581, 197 )
+
+[node name="CommentNode2" type="GraphNode" parent="." instance=ExtResource( 6 )]
+margin_left = 892.125
+margin_top = 229.091
+margin_right = 1684.13
+margin_bottom = 408.091
+rect_min_size = Vector2( 740, 161 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = SubResource( 8 )
+custom_styles/comment = SubResource( 9 )
+offset = Vector2( 451, -181 )
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+comment_text = "Nope, were making a top-down shooter thats actually fast-paced and has teleportation and shit"
+comment_rect = Vector2( 740, 161 )
+
+[node name="GroupNode" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 809.431
+margin_top = 403.947
+margin_right = 1101.43
+margin_bottom = 659.948
+rect_min_size = Vector2( 288, 256 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( 320, 96 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Characters"
+
+[node name="GroupNode3" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 1072.03
+margin_top = 383.747
+margin_right = 1392.03
+margin_bottom = 703.748
+rect_min_size = Vector2( 320, 320 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( 736, 64 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Textures"
+
+[node name="GroupNode2" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 1072.03
+margin_top = 646.346
+margin_right = 1488.03
+margin_bottom = 934.346
+rect_min_size = Vector2( 416, 288 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( 736, 480 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Shaders"
+
+[node name="GroupNode4" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 809.431
+margin_top = 646.346
+margin_right = 1161.43
+margin_bottom = 1094.35
+rect_min_size = Vector2( 352, 448 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( 320, 480 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Effects!"
+
+[node name="CommentNode3" type="GraphNode" parent="." instance=ExtResource( 6 )]
+margin_left = 250.776
+margin_top = 770.071
+margin_right = 623.776
+margin_bottom = 1006.07
+rect_min_size = Vector2( 321, 218 )
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_styles/commentfocus = SubResource( 10 )
+custom_styles/comment = SubResource( 11 )
+offset = Vector2( -565, 676 )
+selected = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+comment_text = "LoadGame fixes window size on HiDPI displays"
+comment_rect = Vector2( 321, 218 )
+
+[node name="FileNode2" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 829.631
+margin_top = 464.546
+margin_right = 1046.63
+margin_bottom = 580.547
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 352, 192 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Characters/Player/Player.tscn"
+icon_class = "KinematicBody2D"
+script_path = "res://Game/Characters/Player/Player.gd"
+script_name = "Player.gd"
+
+[node name="FileNode6" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1092.23
+margin_top = 444.346
+margin_right = 1298.23
+margin_bottom = 501.347
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 768, 160 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Shapes/Circle.png"
+resource_type = 3
+icon_class = "StreamTexture"
+
+[node name="FileNode8" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1092.23
+margin_top = 484.746
+margin_right = 1318.23
+margin_bottom = 541.746
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 768, 224 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Shapes/Square.png"
+resource_type = 3
+icon_class = "StreamTexture"
+
+[node name="FileNode7" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1092.23
+margin_top = 525.146
+margin_right = 1291.23
+margin_bottom = 582.146
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 768, 288 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Shapes/Light.png"
+resource_type = 3
+icon_class = "StreamTexture"
+
+[node name="FileNode4" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1092.23
+margin_top = 747.346
+margin_right = 1444.23
+margin_bottom = 804.346
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 768, 640 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Shaders/Shockwave.gdshader"
+resource_type = 3
+icon_class = "Shader"
+
+[node name="FileNode3" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1092.23
+margin_top = 706.946
+margin_right = 1374.23
+margin_bottom = 763.946
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 768, 576 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Shaders/Glitch.gdshader"
+resource_type = 3
+icon_class = "Shader"
+
+[node name="FileNode5" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 829.631
+margin_top = 706.946
+margin_right = 1077.63
+margin_bottom = 822.946
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 352, 576 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Effects/FXPlayer/FXPlayer.tscn"
+icon_class = "Node"
+script_path = "res://Game/FXPlayer.gd"
+script_name = "FXPlayer.gd"
+
+[node name="FileNode10" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 829.631
+margin_top = 787.746
+margin_right = 1110.63
+margin_bottom = 903.746
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 352, 704 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Effects/Shockwave/Shockwave.tscn"
+icon_class = "Sprite"
+script_path = "res://Game/Effects/Shockwave/Shockwave.gd"
+script_name = "Shockwave.gd"
+
+[node name="FileNode11" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 829.631
+margin_top = 868.546
+margin_right = 1047.63
+margin_bottom = 925.546
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 352, 832 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Characters/Player/Camera.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 486.232
+margin_top = 585.746
+margin_right = 687.233
+margin_bottom = 642.747
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( -192, 384 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Main.tscn"
+icon_class = "Node2D"
+
+[node name="FileNode9" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 486.232
+margin_top = 626.146
+margin_right = 651.232
+margin_bottom = 683.146
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( -192, 448 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/UI.tscn"
+icon_class = "Node"
+
+[node name="FileNode12" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 506.432
+margin_top = 848.346
+margin_right = 764.432
+margin_bottom = 905.346
+rect_scale = Vector2( 0.631249, 0.631249 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( -160, 800 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Global/LoadGame.gd"
+resource_type = 2
+icon_class = "Script"
+
+[connection signal="delete_nodes_request" from="." to="." method="_on_GraphEdit_delete_nodes_request"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Effects/Shockwave/Shockwave.gd" type="Script" id=1]
+[ext_resource path="res://Game/Shapes/Square.png" type="Texture" id=2]
+[ext_resource path="res://Game/Shaders/Shockwave.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/force = 0.0
+shader_param/size = 0.419
+shader_param/thickness = 0.02
+
+[node name="Shockwave" type="Sprite"]
+material = SubResource( 2 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]

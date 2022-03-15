@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/Shapes/Circle.png" type="Texture" id=1]
+[ext_resource path="res://Game/Characters/Player/Camera.gd" type="Script" id=2]
+[ext_resource path="res://Game/Characters/Player/Player.gd" type="Script" id=3]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform bool rim_light = false;
+uniform float rim_thickness : hint_range(0, 40) = 5.0;
+uniform float rim_intense : hint_range(0, 1) = 1.0;
+uniform bool rim_extra_thick = false;
+
+void light() {
+	if (rim_light) {
+		vec2 size = TEXTURE_PIXEL_SIZE * rim_thickness;
+		float outline = texture(TEXTURE, UV + vec2(-size.x, 0)).a;
+		outline *= texture(TEXTURE, UV + vec2(0, size.y)).a;
+		outline *= texture(TEXTURE, UV + vec2(size.x, 0)).a;
+		outline *= texture(TEXTURE, UV + vec2(0, -size.y)).a;
+		if (rim_extra_thick) {
+			outline *= texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
+			outline *= texture(TEXTURE, UV + vec2(size.x, size.y)).a;
+			outline *= texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+			outline *= texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+		}
+		outline = 1.0 - outline;
+
+		vec4 color = texture(TEXTURE, UV);
+		float rim_cap = outline * color.a * rim_intense;
+		LIGHT += rim_cap;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/rim_light = false
+shader_param/rim_thickness = 5.0
+shader_param/rim_intense = 1.0
+shader_param/rim_extra_thick = false
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 256.0
+
+[node name="Player" type="KinematicBody2D"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+light_mask = 3
+material = SubResource( 3 )
+collision_layer = 3
+collision_mask = 8
+script = ExtResource( 3 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 10, 10 )
+smoothing_enabled = true
+smoothing_speed = 8.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

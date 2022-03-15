@@ -1,0 +1,189 @@
+{
+  "categories": [
+    {
+      "title": "Misc",
+      "color": "6394ed"
+    },
+    {
+      "title": "Code",
+      "color": "9403fc"
+    },
+    {
+      "title": "Visual",
+      "color": "f8fc03"
+    },
+    {
+      "title": "Effect",
+      "color": "fc6fc6"
+    }
+  ],
+  "columns": [
+    {
+      "stages": [
+        0,
+        3,
+        5
+      ]
+    },
+    {
+      "stages": [
+        1
+      ]
+    },
+    {
+      "stages": [
+        2,
+        4
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "title": "Features",
+      "tasks": [
+        3,
+        11,
+        12
+      ]
+    },
+    {
+      "title": "Doing",
+      "tasks": [
+        5,
+        1,
+        2,
+        8
+      ]
+    },
+    {
+      "title": "Done",
+      "tasks": [
+        0,
+        4,
+        15,
+        16,
+        10
+      ]
+    },
+    {
+      "title": "Bugs",
+      "tasks": [
+
+      ]
+    },
+    {
+      "title": "Unused",
+      "tasks": [
+        18,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "title": "Ideas",
+      "tasks": [
+        13,
+        14,
+        17
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "category": 2,
+      "title": "Player",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Enemy",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Enemy State Machine",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Make level",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Movement",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Make wall estructible",
+      "details": ""
+    },
+    {
+      "category": 3,
+      "title": "Glitch",
+      "details": ""
+    },
+    {
+      "category": 3,
+      "title": "Shockwave",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Teleportation",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Cam shake",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Cam lookahead",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Weapons",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Health",
+      "details": ""
+    },
+    {
+      "category": 0,
+      "title": "Work on more important stuff instead",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Multiplayer??",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Wall",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Floor",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Enemy search light",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "FXPlayer",
+      "details": ""
+    }
+  ]
+}

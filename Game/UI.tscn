@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="UI" type="Node"]
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Colour" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FG" type="CanvasLayer" parent="."]
+layer = 2
