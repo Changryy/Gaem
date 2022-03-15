@@ -28,15 +28,15 @@ bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
 [sub_resource type="StyleBoxEmpty" id=11]
 
 [node name="ProjectMap" type="GraphEdit"]
-margin_right = 1893.0
-margin_bottom = 1080.0
+margin_right = 1614.0
+margin_bottom = 1507.0
 rect_min_size = Vector2( 500, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/bg = SubResource( 1 )
-scroll_offset = Vector2( -607.431, -343.347 )
+scroll_offset = Vector2( -484.2, -308.077 )
 snap_distance = 32
-zoom = 0.631249
+zoom = 0.861663
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
@@ -44,18 +44,17 @@ __meta__ = {
 }
 
 [node name="GroupNode6" type="GraphNode" parent="." instance=ExtResource( 10 )]
-margin_left = 486.232
-margin_top = 787.746
-margin_right = 838.232
-margin_bottom = 1011.75
+margin_left = 318.761
+margin_top = 914.687
+margin_right = 670.761
+margin_bottom = 1138.7
 rect_min_size = Vector2( 352, 224 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 9 )
 custom_styles/comment = ExtResource( 11 )
 offset = Vector2( -192, 704 )
 resizable = true
-selected = true
 comment = true
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -69,38 +68,13 @@ __meta__ = {
 }
 group_name = "GLOBAL"
 
-[node name="GroupNode5" type="GraphNode" parent="." instance=ExtResource( 10 )]
-margin_left = 466.032
-margin_top = 525.146
-margin_right = 758.032
-margin_bottom = 813.147
-rect_min_size = Vector2( 256, 288 )
-rect_scale = Vector2( 0.631249, 0.631249 )
-mouse_filter = 1
-custom_styles/commentfocus = ExtResource( 9 )
-custom_styles/comment = ExtResource( 11 )
-offset = Vector2( -224, 288 )
-resizable = true
-comment = true
-slot/0/left_enabled = false
-slot/0/left_type = 0
-slot/0/left_color = Color( 1, 1, 1, 1 )
-slot/0/right_enabled = false
-slot/0/right_type = 0
-slot/0/right_color = Color( 1, 1, 1, 1 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-group_name = "Main Stuff"
-
 [node name="CommentNode" type="GraphNode" parent="." instance=ExtResource( 6 )]
-margin_left = 795.543
-margin_top = 151.447
-margin_right = 1428.54
-margin_bottom = 366.447
+margin_left = 740.976
+margin_top = 46.131
+margin_right = 1373.98
+margin_bottom = 261.131
 rect_min_size = Vector2( 581, 197 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = SubResource( 6 )
 custom_styles/comment = SubResource( 7 )
@@ -122,12 +96,12 @@ Woo"
 comment_rect = Vector2( 581, 197 )
 
 [node name="CommentNode2" type="GraphNode" parent="." instance=ExtResource( 6 )]
-margin_left = 892.125
-margin_top = 229.091
-margin_right = 1684.13
-margin_bottom = 408.091
+margin_left = 872.81
+margin_top = 152.116
+margin_right = 1664.81
+margin_bottom = 331.116
 rect_min_size = Vector2( 740, 161 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = SubResource( 8 )
 custom_styles/comment = SubResource( 9 )
@@ -147,12 +121,12 @@ comment_text = "Nope, were making a top-down shooter thats actually fast-paced a
 comment_rect = Vector2( 740, 161 )
 
 [node name="GroupNode" type="GraphNode" parent="." instance=ExtResource( 10 )]
-margin_left = 809.431
-margin_top = 403.947
-margin_right = 1101.43
-margin_bottom = 659.948
+margin_left = 759.932
+margin_top = 390.796
+margin_right = 1051.94
+margin_bottom = 646.798
 rect_min_size = Vector2( 288, 256 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 9 )
 custom_styles/comment = ExtResource( 11 )
@@ -172,12 +146,12 @@ __meta__ = {
 group_name = "Characters"
 
 [node name="GroupNode3" type="GraphNode" parent="." instance=ExtResource( 10 )]
-margin_left = 1072.03
-margin_top = 383.747
-margin_right = 1392.03
-margin_bottom = 703.748
+margin_left = 1118.38
+margin_top = 363.223
+margin_right = 1438.38
+margin_bottom = 683.224
 rect_min_size = Vector2( 320, 320 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 9 )
 custom_styles/comment = ExtResource( 11 )
@@ -197,12 +171,12 @@ __meta__ = {
 group_name = "Textures"
 
 [node name="GroupNode2" type="GraphNode" parent="." instance=ExtResource( 10 )]
-margin_left = 1072.03
-margin_top = 646.346
-margin_right = 1488.03
-margin_bottom = 934.346
+margin_left = 1118.38
+margin_top = 721.675
+margin_right = 1534.38
+margin_bottom = 1009.68
 rect_min_size = Vector2( 416, 288 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 9 )
 custom_styles/comment = ExtResource( 11 )
@@ -222,12 +196,12 @@ __meta__ = {
 group_name = "Shaders"
 
 [node name="GroupNode4" type="GraphNode" parent="." instance=ExtResource( 10 )]
-margin_left = 809.431
-margin_top = 646.346
-margin_right = 1161.43
-margin_bottom = 1094.35
+margin_left = 759.932
+margin_top = 721.675
+margin_right = 1111.94
+margin_bottom = 1169.68
 rect_min_size = Vector2( 352, 448 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 9 )
 custom_styles/comment = ExtResource( 11 )
@@ -247,17 +221,16 @@ __meta__ = {
 group_name = "Effects!"
 
 [node name="CommentNode3" type="GraphNode" parent="." instance=ExtResource( 6 )]
-margin_left = 250.776
-margin_top = 770.071
-margin_right = 623.776
-margin_bottom = 1006.07
+margin_left = -2.63962
+margin_top = 890.561
+margin_right = 370.36
+margin_bottom = 1126.56
 rect_min_size = Vector2( 321, 218 )
-rect_scale = Vector2( 0.631249, 0.631249 )
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_styles/commentfocus = SubResource( 10 )
 custom_styles/comment = SubResource( 11 )
 offset = Vector2( -565, 676 )
-selected = true
 comment = true
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -272,12 +245,88 @@ __meta__ = {
 comment_text = "LoadGame fixes window size on HiDPI displays"
 comment_rect = Vector2( 321, 218 )
 
+[node name="GroupNode7" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 1559.56
+margin_top = 363.223
+margin_right = 1943.56
+margin_bottom = 715.223
+rect_min_size = Vector2( 384, 352 )
+rect_scale = Vector2( 0.861663, 0.861663 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( 1248, 64 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Objects"
+
+[node name="GroupNode8" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 1587.13
+margin_top = 749.248
+margin_right = 1939.13
+margin_bottom = 1037.25
+rect_min_size = Vector2( 352, 288 )
+rect_scale = Vector2( 0.861663, 0.861663 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( 1280, 512 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Actual FSM"
+
+[node name="GroupNode5" type="GraphNode" parent="." instance=ExtResource( 10 )]
+margin_left = 346.334
+margin_top = 473.516
+margin_right = 638.335
+margin_bottom = 761.516
+rect_min_size = Vector2( 256, 288 )
+rect_scale = Vector2( 0.861663, 0.861663 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 9 )
+custom_styles/comment = ExtResource( 11 )
+offset = Vector2( -160, 192 )
+resizable = true
+selected = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Main Stuff"
+
 [node name="FileNode2" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 829.631
-margin_top = 464.546
-margin_right = 1046.63
-margin_bottom = 580.547
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 787.505
+margin_top = 473.516
+margin_right = 1004.51
+margin_bottom = 589.518
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -299,11 +348,11 @@ script_path = "res://Game/Characters/Player/Player.gd"
 script_name = "Player.gd"
 
 [node name="FileNode6" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 1092.23
-margin_top = 444.346
-margin_right = 1298.23
-margin_bottom = 501.347
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 1145.96
+margin_top = 445.943
+margin_right = 1351.96
+margin_bottom = 502.943
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -319,16 +368,16 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Shapes/Circle.png"
+path = "res://Game/Global/Shapes/Circle.png"
 resource_type = 3
 icon_class = "StreamTexture"
 
 [node name="FileNode8" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 1092.23
-margin_top = 484.746
-margin_right = 1318.23
-margin_bottom = 541.746
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 1145.96
+margin_top = 501.089
+margin_right = 1371.96
+margin_bottom = 558.089
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -344,16 +393,16 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Shapes/Square.png"
+path = "res://Game/Global/Shapes/Square.png"
 resource_type = 3
 icon_class = "StreamTexture"
 
 [node name="FileNode7" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 1092.23
-margin_top = 525.146
-margin_right = 1291.23
-margin_bottom = 582.146
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 1145.96
+margin_top = 556.235
+margin_right = 1344.96
+margin_bottom = 613.235
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -369,16 +418,16 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Shapes/Light.png"
+path = "res://Game/Global/Shapes/Light.png"
 resource_type = 3
 icon_class = "StreamTexture"
 
 [node name="FileNode4" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 1092.23
-margin_top = 747.346
-margin_right = 1444.23
-margin_bottom = 804.346
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 1145.96
+margin_top = 859.541
+margin_right = 1497.96
+margin_bottom = 916.546
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -394,16 +443,16 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Shaders/Shockwave.gdshader"
+path = "res://Game/Global/Shaders/Shockwave.gdshader"
 resource_type = 3
 icon_class = "Shader"
 
 [node name="FileNode3" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 1092.23
-margin_top = 706.946
-margin_right = 1374.23
-margin_bottom = 763.946
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 1145.96
+margin_top = 804.394
+margin_right = 1427.96
+margin_bottom = 861.394
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -419,16 +468,16 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Shaders/Glitch.gdshader"
+path = "res://Game/Global/Shaders/Glitch.gdshader"
 resource_type = 3
 icon_class = "Shader"
 
 [node name="FileNode5" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 829.631
-margin_top = 706.946
-margin_right = 1077.63
-margin_bottom = 822.946
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 787.505
+margin_top = 804.394
+margin_right = 1035.51
+margin_bottom = 920.396
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -450,11 +499,11 @@ script_path = "res://Game/FXPlayer.gd"
 script_name = "FXPlayer.gd"
 
 [node name="FileNode10" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 829.631
-margin_top = 787.746
-margin_right = 1110.63
-margin_bottom = 903.746
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 787.505
+margin_top = 914.687
+margin_right = 1068.51
+margin_bottom = 1030.69
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -476,11 +525,11 @@ script_path = "res://Game/Effects/Shockwave/Shockwave.gd"
 script_name = "Shockwave.gd"
 
 [node name="FileNode11" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 829.631
-margin_top = 868.546
-margin_right = 1047.63
-margin_bottom = 925.546
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 787.505
+margin_top = 1024.98
+margin_right = 1005.51
+margin_bottom = 1081.98
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -501,16 +550,16 @@ resource_type = 2
 icon_class = "Script"
 
 [node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 486.232
-margin_top = 585.746
-margin_right = 687.233
-margin_bottom = 642.747
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 373.907
+margin_top = 556.235
+margin_right = 574.908
+margin_bottom = 613.236
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
 custom_styles/selectedframe = ExtResource( 2 )
-offset = Vector2( -192, 384 )
+offset = Vector2( -128, 288 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -525,16 +574,16 @@ path = "res://Game/Main.tscn"
 icon_class = "Node2D"
 
 [node name="FileNode9" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 486.232
-margin_top = 626.146
-margin_right = 651.232
-margin_bottom = 683.146
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 373.907
+margin_top = 611.382
+margin_right = 538.907
+margin_bottom = 668.382
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
 custom_styles/selectedframe = ExtResource( 2 )
-offset = Vector2( -192, 448 )
+offset = Vector2( -128, 352 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -549,11 +598,11 @@ path = "res://Game/UI.tscn"
 icon_class = "Node"
 
 [node name="FileNode12" type="GraphNode" parent="." instance=ExtResource( 3 )]
-margin_left = 506.432
-margin_top = 848.346
-margin_right = 764.432
-margin_bottom = 905.346
-rect_scale = Vector2( 0.631249, 0.631249 )
+margin_left = 346.334
+margin_top = 997.407
+margin_right = 604.334
+margin_bottom = 1054.41
+rect_scale = Vector2( 0.861663, 0.861663 )
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 4 )
@@ -570,6 +619,107 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 path = "res://Game/Global/LoadGame.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode13" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1587.13
+margin_top = 445.943
+margin_right = 1900.13
+margin_bottom = 561.943
+rect_scale = Vector2( 0.861663, 0.861663 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 1280, 160 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Objects/Loader/ObjectLoader.tscn"
+icon_class = "Node"
+script_path = "res://Game/Objects/Loader/ObjectLoader.gd"
+script_name = "ObjectLoader.gd"
+
+[node name="FileNode14" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1587.13
+margin_top = 556.235
+margin_right = 1759.13
+margin_bottom = 613.235
+rect_scale = Vector2( 0.861663, 0.861663 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 1280, 288 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Objects/Wall.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode16" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1614.7
+margin_top = 887.114
+margin_right = 1797.7
+margin_bottom = 944.114
+rect_scale = Vector2( 0.861663, 0.861663 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 1312, 672 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Global/StateMachine/State.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode15" type="GraphNode" parent="." instance=ExtResource( 3 )]
+margin_left = 1614.7
+margin_top = 831.968
+margin_right = 1909.7
+margin_bottom = 888.968
+rect_scale = Vector2( 0.861663, 0.861663 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 4 )
+custom_styles/selectedframe = ExtResource( 2 )
+offset = Vector2( 1312, 608 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://Game/Global/StateMachine/StateMachine.gd"
 resource_type = 2
 icon_class = "Script"
 

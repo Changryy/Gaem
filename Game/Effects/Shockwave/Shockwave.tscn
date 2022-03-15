@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/Effects/Shockwave/Shockwave.gd" type="Script" id=1]
-[ext_resource path="res://Game/Shapes/Square.png" type="Texture" id=2]
-[ext_resource path="res://Game/Shaders/Shockwave.gdshader" type="Shader" id=3]
+[ext_resource path="res://Game/Global/Shapes/Square.png" type="Texture" id=2]
+[ext_resource path="res://Game/Global/Shaders/Shockwave.gdshader" type="Shader" id=3]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
