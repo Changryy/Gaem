@@ -41,7 +41,6 @@
       "title": "Features",
       "tasks": [
         3,
-        11,
         12,
         17
       ]
@@ -49,10 +48,9 @@
     {
       "title": "Doing",
       "tasks": [
-        5,
         1,
         2,
-        8
+        11
       ]
     },
     {
@@ -68,13 +66,17 @@
         6,
         7,
         9,
-        21
+        21,
+        5,
+        8,
+        22,
+        24
       ]
     },
     {
       "title": "Bugs",
       "tasks": [
-
+        23
       ]
     },
     {
@@ -149,8 +151,8 @@
       "details": ""
     },
     {
-      "category": 2,
-      "title": "Weapons",
+      "category": 1,
+      "title": "Shooting",
       "details": ""
     },
     {
@@ -201,6 +203,21 @@
     {
       "category": 3,
       "title": "Slowmotion",
+      "details": ""
+    },
+    {
+      "category": 3,
+      "title": "Cam zoom",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Lights = slow",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Energy",
       "details": ""
     }
   ]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/Characters/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Global/Shapes/Square.png" type="Texture" id=2]
+[ext_resource path="res://Game/Objects/Floor.gd" type="Script" id=2]
 [ext_resource path="res://Game/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Light.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Game/Objects/Wall.gd" type="Script" id=5]
 [ext_resource path="res://Game/Effects/FXPlayer/FXPlayer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Objects/Loader/ObjectLoader.tscn" type="PackedScene" id=7]
+[ext_resource path="res://test.gd" type="Script" id=8]
+[ext_resource path="res://Game/Environment.gd" type="Script" id=9]
+[ext_resource path="res://Game/Objects/Wall.gd" type="Script" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -14,15 +16,19 @@ glow_enabled = true
 glow_levels/1 = true
 glow_levels/2 = true
 glow_levels/5 = false
-glow_intensity = 0.84
 glow_blend_mode = 0
 glow_bicubic_upscale = true
 glow_high_quality = true
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.263699, 0.945946 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [node name="Root" type="Node"]
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+script = ExtResource( 9 )
+glow_curve = SubResource( 2 )
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
 
@@ -31,70 +37,122 @@ environment = SubResource( 1 )
 [node name="ObjectLoader" parent="." instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+z_index = 1
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Wall" type="Node2D" parent="."]
+modulate = Color( 0.317647, 0.160784, 0.352941, 1 )
+
+[node name="Wall" type="Line2D" parent="Wall"]
+points = PoolVector2Array( -219, -180, -271, -123 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall2" type="Line2D" parent="Wall"]
+points = PoolVector2Array( 167, -202, 241, -125 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall3" type="Line2D" parent="Wall"]
+points = PoolVector2Array( -209, 245, -95, 322 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall4" type="Line2D" parent="Wall"]
+points = PoolVector2Array( 394, 90, 359, 166 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall5" type="Line2D" parent="Wall"]
+points = PoolVector2Array( -417, 72, -384, 154 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall6" type="Line2D" parent="Wall"]
+points = PoolVector2Array( -69, -378, 11, -373 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall7" type="Line2D" parent="Wall"]
+points = PoolVector2Array( 146, 348, 231, 335 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall8" type="Line2D" parent="Wall"]
+points = PoolVector2Array( -419, -602, -599, -570, -621, -419, -800, -444 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall9" type="Line2D" parent="Wall"]
+points = PoolVector2Array( 1128, -541, 988, -588, 832, -541, 792, -372 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall10" type="Line2D" parent="Wall"]
+points = PoolVector2Array( 93, -1037, 462, -1030, 480, -827 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall11" type="Line2D" parent="Wall"]
+points = PoolVector2Array( -1199, -924, -1336, -761 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall12" type="Line2D" parent="Wall"]
+points = PoolVector2Array( -1157, 606, -904, 800, -718, 738 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Wall13" type="Line2D" parent="Wall"]
+points = PoolVector2Array( 869, 481, 798, 512, 732, 561, 712, 595, 684, 652, 680, 697, 677, 726, 690, 745, 714, 747, 729, 735, 755, 703, 789, 673, 825, 625, 848, 589, 880, 563, 929, 555, 966, 571, 999, 592, 1024, 618, 1023, 663 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 10 )
+
+[node name="Light" type="Node2D" parent="."]
+
+[node name="Light" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( 13, -21 )
+
+[node name="Light2" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( -1056, -769 )
+
+[node name="Light3" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( 1116, -1131 )
+
+[node name="Light4" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( -1456, 988 )
+
+[node name="Light5" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( 1398, 1091 )
+
+[node name="Light6" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( 1967, -15 )
+
+[node name="Light7" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( -2192, 1 )
+
+[node name="Light8" parent="Light" instance=ExtResource( 4 )]
+position = Vector2( 8, -1937 )
+
+[node name="Circles" type="Node2D" parent="."]
 z_index = -1
-
-[node name="Icon" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( -1926, 886 )
-texture = ExtResource( 2 )
-
-[node name="Icon2" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( 2336, -1252 )
-texture = ExtResource( 2 )
-
-[node name="Icon3" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( -657, 2480 )
-texture = ExtResource( 2 )
-
-[node name="Icon4" type="Sprite" parent="Objects"]
-position = Vector2( 895, 429 )
-texture = ExtResource( 2 )
-
-[node name="Icon5" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( 887, -755 )
-texture = ExtResource( 2 )
-
-[node name="Icon6" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( -622, 973 )
-texture = ExtResource( 2 )
-
-[node name="Icon7" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( -1314, -426 )
-texture = ExtResource( 2 )
-
-[node name="Icon8" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( -1770, -2423 )
-texture = ExtResource( 2 )
-
-[node name="Icon9" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( 1492, 2068 )
-texture = ExtResource( 2 )
-
-[node name="Icon10" type="Sprite" parent="Objects"]
-modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
-position = Vector2( -450, -1165 )
-texture = ExtResource( 2 )
-
-[node name="Wall" type="Polygon2D" parent="."]
-light_mask = 9
-color = Color( 1, 0, 0, 1 )
-polygon = PoolVector2Array( 75, -1405, 533, -1426, 516, -879, 105, -900 )
-script = ExtResource( 5 )
+script = ExtResource( 8 )
 
 [node name="Floor" type="Polygon2D" parent="."]
 light_mask = 17
-z_index = -2
-color = Color( 0.109804, 0.109804, 0.109804, 1 )
-polygon = PoolVector2Array( -8187, -6741, 14030, -6510, 13886, 9769, -7491, 8350 )
-
-[node name="Light" parent="." instance=ExtResource( 4 )]
-texture_scale = 2.31
+z_index = -10
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+polygon = PoolVector2Array( -1603, -1289, 1442, -1263, 1469, 995, -1577, 1018 )
+script = ExtResource( 2 )

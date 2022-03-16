@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/project_map/pm_common_node.gd"
 }, {
+"base": "Polygon2D",
+"class": "Floor",
+"language": "GDScript",
+"path": "res://Game/Objects/Floor.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "Polygon2D",
+"class": "PolyWall",
+"language": "GDScript",
+"path": "res://Game/Objects/PolyWall.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -34,14 +44,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/joystick/virtual_joystick.gd"
 }, {
-"base": "Polygon2D",
+"base": "Line2D",
 "class": "Wall",
 "language": "GDScript",
 "path": "res://Game/Objects/Wall.gd"
 } ]
 _global_script_class_icons={
 "CommonNode": "",
+"Floor": "",
 "GitAPI": "",
+"PolyWall": "",
 "State": "",
 "StateMachine": "",
 "VirtualJoystick": "",
@@ -86,6 +98,7 @@ singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 [gui]
 
 theme/use_hidpi=true
+theme/custom_font="res://fonts/xolonium/Xolonium.tres"
 
 [importer_defaults]
 

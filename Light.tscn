@@ -5,7 +5,6 @@
 [node name="Light" type="Light2D"]
 position = Vector2( 712, -212 )
 texture = ExtResource( 1 )
-texture_scale = 4.0
 range_item_cull_mask = 16
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )

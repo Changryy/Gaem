@@ -12,7 +12,7 @@ shader_param/thickness = 0.02
 
 [node name="Shockwave" type="Sprite"]
 material = SubResource( 2 )
-scale = Vector2( 20, 20 )
+z_index = 10
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 

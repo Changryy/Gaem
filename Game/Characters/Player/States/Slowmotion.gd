@@ -1,34 +1,36 @@
 extends State
 
-export(float) var time_scale = 0.3
-export(float, 0, 60, 0.1) var duration = 1
-export(float, 0, 60, 0.1) var transition = 0.7
+export(Curve) var curve: Curve
 
 var wait_time := 0.0
+var duration := 0.0
 
 func update(delta):
-	wait_time += delta
-	if wait_time > duration: goto("Normal")
+	Engine.time_scale = curve.interpolate(wait_time/duration)
+	if wait_time > duration:
+		if owner.reload: goto("Reload")
+		else: goto("Normal")
+	wait_time += delta / Engine.time_scale
+	if Input.is_action_pressed("special"):
+		owner.energy -= (delta / Engine.time_scale)
 
 func physics_update(_delta): owner.move()
-
-
-func interpolate(to, easing := Tween.EASE_OUT):
-	$Tween.interpolate_property(
-		Engine, "time_scale",
-		Engine.time_scale, to, transition,
-		Tween.TRANS_CUBIC, easing
-	); $Tween.start()
-
 func enter(_msg={}):
 	wait_time = 0
-	interpolate(time_scale)
+	duration = owner.energy
+func exit(): Engine.time_scale = 1
 
-func exit(): interpolate(1.0, Tween.EASE_IN)
-
-func handle_input(_event):
-	if Input.is_action_just_released("special") \
-		and wait_time != 0: goto("Normal")
-	if Input.is_action_just_pressed("shoot"): pass
+func check():
+	if Input.is_action_just_released("special"):
+		wait_time = find_last_x(Engine.time_scale) * duration
+	if Input.is_action_just_pressed("shoot") and owner.energy > owner.teleport_cost:
+		owner.energy -= owner.teleport_cost
+		goto("Teleport", {position=owner.get_global_mouse_position()})
 	if Input.is_action_just_pressed("reload"): pass
 
+
+func find_last_x(y, precision := 0.0001):
+	var x := 1.0
+	while curve.interpolate(x) > y:
+		x -= precision
+	return x
