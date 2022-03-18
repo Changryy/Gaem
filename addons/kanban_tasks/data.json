@@ -15,6 +15,10 @@
     {
       "title": "Effect",
       "color": "fc6fc6"
+    },
+    {
+      "title": "Bug",
+      "color": "ff0000"
     }
   ],
   "columns": [
@@ -32,7 +36,8 @@
     },
     {
       "stages": [
-        2
+        2,
+        4
       ]
     }
   ],
@@ -70,27 +75,30 @@
         5,
         8,
         22,
-        24
+        24,
+        26,
+        27
       ]
     },
     {
       "title": "Bugs",
       "tasks": [
-        23
+        23,
+        28
       ]
     },
     {
-      "title": "Unused",
+      "title": "Patched Bugs",
       "tasks": [
-
+        25
       ]
     },
     {
       "title": "Ideas",
       "tasks": [
         13,
-        14,
-        19
+        19,
+        14
       ]
     }
   ],
@@ -167,7 +175,7 @@
     },
     {
       "category": 1,
-      "title": "Multiplayer??",
+      "title": "Multiplayer???",
       "details": ""
     },
     {
@@ -192,7 +200,7 @@
     },
     {
       "category": 1,
-      "title": "Mobile support???",
+      "title": "Mobile support??",
       "details": ""
     },
     {
@@ -211,13 +219,33 @@
       "details": ""
     },
     {
-      "category": 2,
-      "title": "Lights = slow",
+      "category": 4,
+      "title": "Lights = lag",
       "details": ""
     },
     {
       "category": 1,
       "title": "Energy",
+      "details": ""
+    },
+    {
+      "category": 4,
+      "title": "Light + shaders = artifacts",
+      "details": ""
+    },
+    {
+      "category": 3,
+      "title": "Trail",
+      "details": ""
+    },
+    {
+      "category": 2,
+      "title": "Animated UI",
+      "details": ""
+    },
+    {
+      "category": 4,
+      "title": "Fullscreen = lag",
       "details": ""
     }
   ]

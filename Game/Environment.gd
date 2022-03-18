@@ -1,6 +1,5 @@
 extends WorldEnvironment
 
-
 export(float, 0, 60, 0.1) var glow_duration = 1
 export(Curve) var glow_curve
 

@@ -23,14 +23,16 @@ func exit(): Engine.time_scale = 1
 func check():
 	if Input.is_action_just_released("special"):
 		wait_time = find_last_x(Engine.time_scale) * duration
-	if Input.is_action_just_pressed("shoot") and owner.energy > owner.teleport_cost:
-		owner.energy -= owner.teleport_cost
-		goto("Teleport", {position=owner.get_global_mouse_position()})
+	if Input.is_action_just_pressed("shoot"):
+		var tp_pos = owner.get_global_mouse_position()
+		if owner.check_tp(tp_pos):
+			owner.energy -= owner.teleport_cost
+			goto("Teleport", {position=tp_pos})
+		
 	if Input.is_action_just_pressed("reload"): pass
 
 
 func find_last_x(y, precision := 0.0001):
 	var x := 1.0
-	while curve.interpolate(x) > y:
-		x -= precision
+	while curve.interpolate(x) > y: x -= precision
 	return x
