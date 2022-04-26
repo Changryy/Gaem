@@ -11,6 +11,7 @@ func _ready():
 
 
 func _process(delta):
+	if glow_time > glow_duration: return
 	environment.glow_bloom = glow_curve.interpolate(glow_time/glow_duration) * glow_amount
 	glow_time += delta
 

@@ -12,12 +12,17 @@ func enter(msg={}):
 #	yield(get_tree().create_timer(glitch_time),"timeout")
 	
 	FXPlayer.zoom(1.8)
-	owner.hide()
+	owner.get_node("Sprite").hide()
+	owner.get_node("Trail").hide()
+	owner.get_node("Floor").energy = 0
 	owner.ui_animation.play("RESET")
+	yield(VisualServer, "frame_post_draw")
 	if destination_cam: owner.position = msg.position
 	yield(get_tree().create_timer(phase_time),"timeout")
 	if !destination_cam: owner.position = msg.position
-	owner.show()
+	owner.get_node("Sprite").show()
+	owner.get_node("Trail").show()
+	owner.get_node("Floor").energy = 1.2
 	generate_line(prev_pos, owner.position)
 	FXPlayer.zoom(0.2)
 	
@@ -47,7 +52,6 @@ func generate_line(from: Vector2, to: Vector2):
 	
 	owner.add_child(line)
 	
-#	line.points = Geometry.
 
 
 

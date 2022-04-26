@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/joystick_tip.png-aa255fd41a1bacb1c856f1f8eddfa661.stex"
+path="res://.import/HollowSquare.png-371e01f8581a3b93a6356a98e9dcea1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/joystick/textures/joystick_tip.png"
-dest_files=[ "res://.import/joystick_tip.png-aa255fd41a1bacb1c856f1f8eddfa661.stex" ]
+source_file="res://Game/Global/Shapes/HollowSquare.png"
+dest_files=[ "res://.import/HollowSquare.png-371e01f8581a3b93a6356a98e9dcea1e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

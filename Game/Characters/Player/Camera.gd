@@ -1,6 +1,7 @@
 extends Camera2D
 
-export(Vector2) var lookahead_multiplier := Vector2(1,2)
+export(Vector2) var lookahead_multiplier := Vector2(0.5, 1)
+
 
 var default_zoom = zoom
 var target_zoom = zoom
@@ -10,6 +11,7 @@ var shake_amount := Vector2()
 var lookahead := Vector2()
 
 func _ready():
+	lookahead = Vector2.ZERO
 	FXPlayer.connect("shake_camera", self, "shake")
 	FXPlayer.connect("zoom_camera", self, "zoom_to")
 	randomize()

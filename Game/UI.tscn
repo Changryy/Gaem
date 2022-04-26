@@ -14,6 +14,7 @@ layer = -1
 [node name="Colour" type="ColorRect" parent="BG"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -23,6 +24,7 @@ __meta__ = {
 layer = 2
 
 [node name="Label" type="Label" parent="FG"]
+visible = false
 margin_bottom = 39.0
 theme = SubResource( 1 )
 script = ExtResource( 2 )

@@ -1,5 +1,7 @@
 extends Node2D
 
+export(bool) var on = true
+
 var line_arc = 8
 
 func draw_cool_thing(r, col):
@@ -13,6 +15,7 @@ func draw_cool_thing(r, col):
 		)
 
 func _draw():
-	draw_cool_thing(300, Color(1,1,1))
-	draw_cool_thing(600, Color(0.3,0.3,0.3))
+	if !on: return
+	draw_cool_thing(300, Color(1,1,1)/1.5)
+	draw_cool_thing(600, Color(0.3,0.3,0.3)/1.5)
 

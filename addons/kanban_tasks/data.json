@@ -55,7 +55,8 @@
       "tasks": [
         1,
         2,
-        11
+        11,
+        29
       ]
     },
     {
@@ -84,7 +85,8 @@
       "title": "Bugs",
       "tasks": [
         23,
-        28
+        28,
+        30
       ]
     },
     {
@@ -246,6 +248,16 @@
     {
       "category": 4,
       "title": "Fullscreen = lag",
+      "details": ""
+    },
+    {
+      "category": 1,
+      "title": "Inventory",
+      "details": ""
+    },
+    {
+      "category": 4,
+      "title": "Environment = lag",
       "details": ""
     }
   ]

@@ -15,6 +15,7 @@ func _ready():
 	body.collision_layer = bitmask
 	light_mask = bitmask
 	antialiased = true
+	body.add_to_group("wall")
 	
 	body.add_child(hitbox); body.add_child(occluder)
 	add_child(body)
@@ -33,7 +34,8 @@ func update_shape(new_polygon = polygon):
 
 func exclude_shape(poly: PoolVector2Array):
 	var result = Geometry.clip_polygons_2d(polygon, poly)
+	if !result: return queue_free()
 	update_shape(result.pop_front())
 	for shape in result:
-		ObjectLoader.spawn_wall(shape, color)
+		get_parent().spawn_wall(shape)
 

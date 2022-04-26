@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Effects/Environment.gd" type="Script" id=1]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/5 = false
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+glow_high_quality = true
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.263699, 0.945946 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Environment" type="WorldEnvironment"]
+environment = SubResource( 1 )
+script = ExtResource( 1 )
+glow_curve = SubResource( 2 )

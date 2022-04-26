@@ -5,8 +5,8 @@ export(float) var max_energy = 2
 export(float) var energy_regen := 0.5
 export(float) var teleport_cost := 1.0
 export(Resource) onready var weapon = weapon as Weapon
-export(NodePath) onready var ui_animation = get_node(ui_animation) as AnimationPlayer
 export(int) var max_health = 100
+export(NodePath) onready var ui_animation = get_node(ui_animation) as AnimationPlayer
 
 var velocity := Vector2()
 var reload: float = 0
@@ -46,9 +46,13 @@ func regen(delta, multiplier := 1.0):
 
 
 # reload x amount of ammo
-func refill(_amount = weapon.mag_size):
-	if weapon.ammo == Weapon.AMMO_TYPE.energy:
-		pass
+func refill(amount = weapon.mag_size - ammo):
+	match weapon.ammo_type:
+		Weapon.AMMO.energy: pass
+		Weapon.AMMO.normal:
+			amount = clamp(amount, 0, Inventory.ammo)
+			Inventory.ammo -= amount
+			ammo += amount
 
 func check_tp(tp_pos) -> bool:
 	if energy < teleport_cost: return false
@@ -61,8 +65,9 @@ func check_tp(tp_pos) -> bool:
 
 
 func _ready():
-	yield(get_tree().create_timer(1), "timeout")
-	ui_animation.play("ExtendUI")
+	ui_animation.play("RESET")
+	ui_animation.play("Off")
+	weapon.owner = self
 
 
 
