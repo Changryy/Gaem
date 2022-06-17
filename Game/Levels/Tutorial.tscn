@@ -1,0 +1,681 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Game/Levels/Objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Levels/Objects/Floor.gd" type="Script" id=2]
+[ext_resource path="res://Game/Levels/Decals/WASD.png" type="Texture" id=3]
+[ext_resource path="res://Game/Levels/Objects/Loader/ObjectLoader.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Levels/Objects/Wall/Wall.gd" type="Script" id=5]
+[ext_resource path="res://Game/Levels/Decals/Shift.png" type="Texture" id=6]
+[ext_resource path="res://Game/Levels/Objects/BulletSpawner.gd" type="Script" id=7]
+[ext_resource path="res://Game/Levels/Objects/Areas/Slowmotion.gd" type="Script" id=8]
+[ext_resource path="res://Game/Levels/Objects/Areas/Teleport.gd" type="Script" id=9]
+[ext_resource path="res://Game/Levels/Decals/LMB.png" type="Texture" id=10]
+[ext_resource path="res://Game/Levels/Decals/Circle.png" type="Texture" id=11]
+[ext_resource path="res://Game/Levels/Objects/Confetti.gd" type="Script" id=12]
+[ext_resource path="res://Game/Levels/Objects/BoxSpawner.gd" type="Script" id=13]
+[ext_resource path="res://Game/Levels/Objects/Areas/Shoot.gd" type="Script" id=14]
+[ext_resource path="res://Game/Levels/Decals/R.png" type="Texture" id=15]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -500, 0 )
+b = Vector2( 500, 0 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -200, 0 )
+b = Vector2( 200, 0 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 50.0
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="SegmentShape2D" id=5]
+a = Vector2( -600, 0 )
+b = Vector2( 600, 0 )
+
+[node name="Tutorial" type="Node2D" groups=["level"]]
+
+[node name="Floor" type="Polygon2D" parent="."]
+light_mask = 17
+z_index = -10
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+polygon = PoolVector2Array( -487, -1007, -487, -2108, -66, -3075, -600, -3412, -600, -13793, 600, -13794, 600, -3412, 67, -3075, 487, -2109, 487, -1007, 259, -298, 259, 263, -253, 261, -253, -299 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Decals" type="Node2D" parent="Floor"]
+modulate = Color( 1, 1, 1, 0.0627451 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WASD" type="Sprite" parent="Floor/Decals"]
+light_mask = 17
+position = Vector2( 0, -28 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="Shift" type="Sprite" parent="Floor/Decals"]
+light_mask = 17
+position = Vector2( 0, -1100 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Floor/Decals/Shift"]
+light_mask = 17
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -156.5
+margin_top = -41.5
+margin_right = 108.5
+margin_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "HOLD       SHIFT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Shift2" type="Sprite" parent="Floor/Decals"]
+light_mask = 17
+position = Vector2( 0, -1998 )
+rotation = 3.14159
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Floor/Decals/Shift2"]
+light_mask = 17
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -156.5
+margin_top = -41.5
+margin_right = 108.5
+margin_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "HOLD       SHIFT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Teleport" type="Node2D" parent="Floor/Decals"]
+light_mask = 17
+position = Vector2( 0, -176 )
+
+[node name="Shift" type="Sprite" parent="Floor/Decals/Teleport"]
+light_mask = 17
+position = Vector2( 0, -3381 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Floor/Decals/Teleport/Shift"]
+light_mask = 17
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -156.5
+margin_top = -41.5
+margin_right = 108.5
+margin_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "HOLD       SHIFT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="+" type="Label" parent="Floor/Decals/Teleport"]
+light_mask = 17
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -3347.0
+margin_right = 20.0
+margin_bottom = -3308.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1.95328, 1.95328 )
+rect_pivot_offset = Vector2( 20, 19 )
+text = "+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Lmb" type="Sprite" parent="Floor/Decals/Teleport"]
+light_mask = 17
+position = Vector2( 0, -3233 )
+texture = ExtResource( 10 )
+
+[node name="Circle" type="Sprite" parent="Floor/Decals/Teleport"]
+light_mask = 17
+position = Vector2( 0, -3311 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+
+[node name="Title" type="Node2D" parent="Floor/Decals"]
+light_mask = 17
+position = Vector2( -193, -6537 )
+rotation = -0.3735
+scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Floor/Decals/Title"]
+light_mask = 17
+margin_right = 96.0
+margin_bottom = 81.0
+text = "GAEM"
+
+[node name="Label2" type="Label" parent="Floor/Decals/Title"]
+light_mask = 17
+margin_left = -22.0
+margin_top = 19.0
+margin_right = 133.0
+margin_bottom = 100.0
+text = "the game"
+
+[node name="Lmb" type="Sprite" parent="Floor/Decals"]
+light_mask = 17
+position = Vector2( 0, -9909 )
+texture = ExtResource( 10 )
+
+[node name="Reload" type="Node2D" parent="Floor/Decals"]
+position = Vector2( 83, -388 )
+
+[node name="R" type="Sprite" parent="Floor/Decals/Reload"]
+light_mask = 17
+position = Vector2( 182, -10245 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="Floor/Decals/Reload"]
+light_mask = 17
+margin_left = 226.0
+margin_top = -10264.0
+margin_right = 316.0
+margin_bottom = -10225.0
+text = "eload"
+
+[node name="ObjectLoader" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.372549, 0.188235, 0.415686, 1 )
+
+[node name="Wall" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( -500, -1000, -87, -226, -221, -92, -221, 92, -92, 221, 92, 221, 221, 92, 221, -92, 87, -226, 500, -1000 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall2" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( -500, -2100, -100, -3000, -40, -3050, -608, -3400 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall3" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( 500, -2100, 100, -3000, 40, -3050, 608, -3400 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall4" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( -612, -4285, -430, -4530, -550, -4600, -550, -4780, -443, -4850, -610, -5000 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall5" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( 612, -4285, 430, -4530, 550, -4600, 550, -4780, 443, -4850, 610, -5000 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall6" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( 612, -4285, 430, -4530, 550, -4600, 550, -4780, 443, -4850, 610, -5000 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall7" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( -386, -4869, -236, -4856, -170, -4725, -208, -4617, -32, -4645 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall8" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( 386, -4869, 236, -4856, 170, -4725, 208, -4617, 32, -4645 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall9" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( -394, -4559, -257, -4606 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall10" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( 394, -4559, 257, -4606 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall11" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( -215, -4858, 0, -4968, 215, -4858 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+indestructible = true
+
+[node name="Wall12" type="Line2D" parent="ObjectLoader"]
+points = PoolVector2Array( -613, -9000, -64, -10000, 64, -10000, 613, -9000 )
+width = 30.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+
+[node name="Turrets" type="Node2D" parent="."]
+
+[node name="BulletSpawner" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1050.86 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner2" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1019.86 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner3" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1082.86 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner4" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1113.86 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner5" type="Position2D" parent="Turrets"]
+position = Vector2( -483, -1149.86 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner6" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1187.86 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner7" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1253 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner8" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1222 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner9" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1285 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner10" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1316 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner11" type="Position2D" parent="Turrets"]
+position = Vector2( -483, -1352 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner12" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1390 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner13" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1458 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner14" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1427 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner15" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1490 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner16" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1521 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner17" type="Position2D" parent="Turrets"]
+position = Vector2( -483, -1557 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner18" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1595 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner19" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1629 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner20" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1660 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner21" type="Position2D" parent="Turrets"]
+position = Vector2( -483, -1696 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner22" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1734 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner23" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1802 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner24" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1771 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner25" type="Position2D" parent="Turrets"]
+position = Vector2( -481, -1834 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner26" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1865 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner27" type="Position2D" parent="Turrets"]
+position = Vector2( -483, -1901 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner28" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1939 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner29" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -1974 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner30" type="Position2D" parent="Turrets"]
+position = Vector2( -483, -2010 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner31" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -2048 )
+script = ExtResource( 7 )
+
+[node name="BulletSpawner32" type="Position2D" parent="Turrets"]
+position = Vector2( -482, -2078 )
+script = ExtResource( 7 )
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 1 )]
+abilities = {
+"shoot": false,
+"slowmotion": false,
+"teleport": false
+}
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 1 )]
+position = Vector2( 0, -3502 )
+abilities = {
+"shoot": false,
+"slowmotion": true,
+"teleport": true
+}
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 1 )]
+position = Vector2( 0, -9742 )
+
+[node name="Abilities" type="Node2D" parent="."]
+
+[node name="Slowmotion" type="Area2D" parent="Abilities"]
+position = Vector2( 0, -540 )
+monitorable = false
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hitbox" type="CollisionShape2D" parent="Abilities/Slowmotion"]
+shape = SubResource( 1 )
+
+[node name="Teleport" type="Area2D" parent="Abilities"]
+position = Vector2( 0, -2615 )
+monitorable = false
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hitbox" type="CollisionShape2D" parent="Abilities/Teleport"]
+shape = SubResource( 1 )
+
+[node name="Shoot" type="Area2D" parent="Abilities"]
+position = Vector2( 0, -9200 )
+monitorable = false
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hitbox" type="CollisionShape2D" parent="Abilities/Shoot"]
+shape = SubResource( 1 )
+
+[node name="Objects" type="Node2D" parent="."]
+modulate = Color( 0.372549, 0.188235, 0.415686, 1 )
+script = ExtResource( 13 )
+
+[node name="Trigger" type="Area2D" parent="Objects"]
+position = Vector2( 0, -8131 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Trigger"]
+shape = SubResource( 2 )
+
+[node name="start" type="Position2D" parent="Objects"]
+position = Vector2( -593, -8025 )
+
+[node name="stop" type="Position2D" parent="Objects"]
+position = Vector2( 600, -7991 )
+
+[node name="ball" type="KinematicBody2D" parent="Objects"]
+position = Vector2( 0, -7925 )
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/ball"]
+position = Vector2( -388, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/ball"]
+position = Vector2( 385, 0 )
+shape = SubResource( 3 )
+
+[node name="Tween" type="Tween" parent="Objects"]
+
+[node name="FX" type="Node2D" parent="."]
+modulate = Color( 1.4, 1.4, 1.4, 1 )
+position = Vector2( -15, -11146 )
+
+[node name="0" type="CPUParticles2D" parent="FX"]
+position = Vector2( 615, -166 )
+emitting = false
+amount = 64
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+direction = Vector2( -1, 0 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 1300.0
+initial_velocity_random = 0.66
+damping = 1000.0
+damping_random = 0.29
+scale_amount = 10.0
+scale_amount_random = 0.62
+scale_amount_curve = SubResource( 4 )
+color = Color( 0.403922, 0.941176, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="FX/0"]
+position = Vector2( -600, 224 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FX/0/Area2D"]
+shape = SubResource( 5 )
+
+[node name="1" type="CPUParticles2D" parent="FX"]
+position = Vector2( 615, -616 )
+emitting = false
+amount = 64
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+direction = Vector2( -1, 0 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 1300.0
+initial_velocity_random = 0.66
+damping = 1000.0
+damping_random = 0.29
+scale_amount = 10.0
+scale_amount_random = 0.62
+scale_amount_curve = SubResource( 4 )
+color = Color( 0.403922, 0.941176, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="FX/1"]
+position = Vector2( -600, 224 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FX/1/Area2D"]
+shape = SubResource( 5 )
+
+[node name="3" type="CPUParticles2D" parent="FX"]
+position = Vector2( -586, -842 )
+emitting = false
+amount = 64
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1300.0
+initial_velocity_random = 0.66
+damping = 1000.0
+damping_random = 0.29
+scale_amount = 10.0
+scale_amount_random = 0.62
+scale_amount_curve = SubResource( 4 )
+color = Color( 0.403922, 0.941176, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="FX/3"]
+position = Vector2( 601, 224 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FX/3/Area2D"]
+shape = SubResource( 5 )
+
+[node name="4" type="CPUParticles2D" parent="FX"]
+position = Vector2( -586, -389 )
+emitting = false
+amount = 64
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1300.0
+initial_velocity_random = 0.66
+damping = 1000.0
+damping_random = 0.29
+scale_amount = 10.0
+scale_amount_random = 0.62
+scale_amount_curve = SubResource( 4 )
+color = Color( 0.403922, 0.941176, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="FX/4"]
+position = Vector2( 601, 224 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FX/4/Area2D"]
+shape = SubResource( 5 )
+
+[node name="2" type="CPUParticles2D" parent="FX"]
+position = Vector2( 615, -1441 )
+emitting = false
+amount = 64
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+direction = Vector2( -1, 0 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 1300.0
+initial_velocity_random = 0.66
+damping = 1000.0
+damping_random = 0.29
+scale_amount = 10.0
+scale_amount_random = 0.62
+scale_amount_curve = SubResource( 4 )
+color = Color( 0.403922, 0.941176, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="FX/2"]
+position = Vector2( -600, 224 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FX/2/Area2D"]
+shape = SubResource( 5 )
+
+[node name="5" type="CPUParticles2D" parent="FX"]
+position = Vector2( -586, -1441 )
+emitting = false
+amount = 64
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1300.0
+initial_velocity_random = 0.66
+damping = 1000.0
+damping_random = 0.29
+scale_amount = 10.0
+scale_amount_random = 0.62
+scale_amount_curve = SubResource( 4 )
+color = Color( 0.403922, 0.941176, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="FX/5"]
+position = Vector2( 601, 224 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FX/5/Area2D"]
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="Abilities/Slowmotion" to="Abilities/Slowmotion" method="_on_Slowmotion_body_entered"]
+[connection signal="body_entered" from="Abilities/Teleport" to="Abilities/Teleport" method="_on_Teleport_body_entered"]
+[connection signal="body_entered" from="Abilities/Shoot" to="Abilities/Shoot" method="_on_Teleport_body_entered"]
+[connection signal="body_entered" from="Objects/Trigger" to="Objects" method="activate"]
+[connection signal="tween_all_completed" from="Objects/Tween" to="Objects" method="done"]
+[connection signal="body_entered" from="FX/0/Area2D" to="FX/0" method="activate"]
+[connection signal="body_entered" from="FX/1/Area2D" to="FX/1" method="activate"]
+[connection signal="body_entered" from="FX/3/Area2D" to="FX/3" method="activate"]
+[connection signal="body_entered" from="FX/4/Area2D" to="FX/4" method="activate"]
+[connection signal="body_entered" from="FX/2/Area2D" to="FX/2" method="activate"]
+[connection signal="body_entered" from="FX/5/Area2D" to="FX/5" method="activate"]

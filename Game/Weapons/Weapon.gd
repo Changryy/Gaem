@@ -56,6 +56,7 @@ func _fire_round():
 	owner.ammo -= 1
 	var bullet = BULLET.instance()
 	bullet.position = owner.position
+	bullet.damage = damage
 	owner.add_child(bullet)
 
 

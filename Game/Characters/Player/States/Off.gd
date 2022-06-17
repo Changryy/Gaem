@@ -23,5 +23,5 @@ func turn_on():
 	camera.set_process(true)
 	owner.ui_animation.play("On")
 	yield(get_tree().create_timer(1), "timeout")
-	owner.ui_animation.play("ExtendUI")
+	owner.extend_ui()
 	goto("Normal")

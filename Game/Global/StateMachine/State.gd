@@ -2,6 +2,7 @@ extends Node
 class_name State
 
 var state_machine = null
+var is_active := false
 
 # Virtual function. Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void: pass

@@ -8,10 +8,11 @@ export var destination_cam = true
 
 func enter(msg={}):
 	var prev_pos = owner.position
-#	FXPlayer.glitch(glitch_time)
-#	yield(get_tree().create_timer(glitch_time),"timeout")
+	FXPlayer.glitch(glitch_time)
+	yield(get_tree().create_timer(glitch_time),"timeout")
 	
 	FXPlayer.zoom(1.8)
+	owner.get_node("Hitbox").disabled = true
 	owner.get_node("Sprite").hide()
 	owner.get_node("Trail").hide()
 	owner.get_node("Floor").energy = 0
@@ -23,6 +24,7 @@ func enter(msg={}):
 	owner.get_node("Sprite").show()
 	owner.get_node("Trail").show()
 	owner.get_node("Floor").energy = 1.2
+	owner.get_node("Hitbox").disabled = false
 	generate_line(prev_pos, owner.position)
 	FXPlayer.zoom(0.2)
 	
@@ -31,7 +33,7 @@ func enter(msg={}):
 	FXPlayer.glow(0.3, 0.1)
 	
 	yield(get_tree().create_timer(0.15),"timeout")
-	owner.ui_animation.play("ExtendUI")
+	owner.extend_ui()
 	FXPlayer.zoom()
 	if owner.reload: goto("Reload")
 	else: goto("Normal")

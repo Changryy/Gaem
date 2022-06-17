@@ -1,15 +1,20 @@
 extends Node2D
 
+export var is_enemy := false
+
 var speed := 5000
 var spread := 1.0
+var damage := 1
 
 var dead := false
+var target
 
 
 func _ready():
 	set_as_toplevel(true)
 	$Trail.set_as_toplevel(true)
-	look_at(get_global_mouse_position())
+	$Trail.add_point(global_position)
+	if !is_enemy: look_at(get_global_mouse_position())
 	randomize()
 	rotation_degrees += rand_range(-spread, spread)
 
@@ -17,7 +22,10 @@ func _ready():
 func _physics_process(delta):
 	if dead:
 		if $Trail.width > 0.3: $Trail.width = lerp($Trail.width, 0, 0.3)
-		else: $Trail.width = 0
+		else:
+			$Trail.width = 0
+			if not ($Particles.emitting or $Spark.emitting):
+				queue_free()
 	else: move(delta)
 	
 
@@ -37,8 +45,11 @@ func move(delta):
 
 func die():
 	dead = true
-	var target = $Ray.get_collider() as CollisionObject2D
-	if target.is_in_group("wall"): hit_wall(target.get_parent())
+	target = $Ray.get_collider() as CollisionObject2D
+	if !target: return queue_free()
+	elif target.is_in_group("wall"): hit_wall(target.get_parent())
+	elif target.is_in_group("character"): hit_character()
+	elif target.is_in_group("box"): hit_box()
 	$Trail.add_point($Ray.get_collision_point())
 
 func hit_wall(wall):
@@ -46,13 +57,24 @@ func hit_wall(wall):
 	var shape = PoolVector2Array()
 	for vertex in $Poly.polygon:
 		shape.append(pos + wall.position + vertex.rotated(rotation))
-	wall.exclude_shape(shape)
-	particles(pos)
+	if wall.exclude_shape(shape):
+		$Particles.global_position = pos
+		$Particles.emitting = true
+	else:
+		$Spark.global_position = pos
+		$Spark.emitting = true
+
+func hit_box():
+	$Spark.global_position = $Ray.get_collision_point()
+	$Spark.emitting = true
+	target.apply_impulse(
+		$Ray.get_collision_point() - target.global_position,
+		-$Ray.get_collision_normal() * 4000
+	)
 
 
-func particles(pos):
-	$Particles.global_position = pos
-	$Particles.emitting = true
-	yield(get_tree().create_timer($Particles.lifetime), "timeout")
-	queue_free()
-
+func hit_character():
+	if !target: return
+	target.dmg(damage)
+	target = null
+	#queue_free()

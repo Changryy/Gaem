@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Game/FPS.gd" type="Script" id=2]
+[ext_resource path="res://Game/FPSCounter.gd" type="Script" id=2]
+[ext_resource path="res://Game/Effects/BlackScreen.gd" type="Script" id=3]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
@@ -16,9 +17,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FG" type="CanvasLayer" parent="."]
 layer = 2
@@ -28,6 +26,23 @@ visible = false
 margin_bottom = 39.0
 theme = SubResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="FG"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Viewport" type="Viewport" parent="FG/ViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="BlackScreen" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Color" type="ColorRect" parent="BlackScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="BlackScreen/Color"]

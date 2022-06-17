@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 10, 10 )
+
+[sub_resource type="Environment" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0577277, 1.46275 )
+spot_range = 4.20302
+spot_angle = 33.9626
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 1.27465, -0.874494 )
+projection = 1
+size = 4.01955

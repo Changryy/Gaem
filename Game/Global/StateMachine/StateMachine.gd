@@ -44,8 +44,10 @@ func update_label() -> void:
 # It optionally takes a `msg` dictionary to pass to the next state's enter() function.
 func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	if not has_node(target_state_name): return
+	state.is_active = false
 	state.exit()
 	state = get_node(target_state_name)
+	state.is_active = true
 	state.enter(msg)
 	emit_signal("transitioned", state.name)
 	update_label()

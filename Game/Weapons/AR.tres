@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-damage = 100.0
+damage = 5.0
 rps = 10.0
 ammo_type = 0
 mag_size = 32

@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Position2D",
+"class": "BulletSpawner",
+"language": "GDScript",
+"path": "res://Game/Levels/Objects/BulletSpawner.gd"
+}, {
+"base": "Control",
+"class": "CodeSnapshotInstance",
+"language": "GDScript",
+"path": "res://addons/code-snapshot/Instance/instance.gd"
+}, {
 "base": "GraphNode",
 "class": "CommonNode",
 "language": "GDScript",
@@ -17,17 +27,22 @@ _global_script_classes=[ {
 "base": "Polygon2D",
 "class": "Floor",
 "language": "GDScript",
-"path": "res://Game/Objects/Floor.gd"
+"path": "res://Game/Levels/Objects/Floor.gd"
 }, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 }, {
+"base": "Node",
+"class": "MazeCreator",
+"language": "GDScript",
+"path": "res://Game/Levels/Objects/Maze/MazeCreator.gd"
+}, {
 "base": "Polygon2D",
 "class": "PolyWall",
 "language": "GDScript",
-"path": "res://Game/Objects/PolyWall.gd"
+"path": "res://Game/Levels/Objects/Wall/PolyWall.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -47,7 +62,7 @@ _global_script_classes=[ {
 "base": "Line2D",
 "class": "Wall",
 "language": "GDScript",
-"path": "res://Game/Objects/Wall.gd"
+"path": "res://Game/Levels/Objects/Wall/Wall.gd"
 }, {
 "base": "Resource",
 "class": "Weapon",
@@ -55,9 +70,12 @@ _global_script_classes=[ {
 "path": "res://Game/Weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
+"BulletSpawner": "",
+"CodeSnapshotInstance": "",
 "CommonNode": "",
 "Floor": "",
 "GitAPI": "",
+"MazeCreator": "",
 "PolyWall": "",
 "State": "",
 "StateMachine": "",
@@ -69,18 +87,19 @@ _global_script_class_icons={
 [application]
 
 config/name="Gaem"
-run/main_scene="res://Game/Main.tscn"
+run/main_scene="res://Game/Game.tscn"
 boot_splash/image="res://Game/Global/Shapes/SquareBlack.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://Game/Global/icon.png"
 
 [autoload]
 
-LoadGame="*res://Game/Global/LoadGame.gd"
+LoadGame="*res://Game/Global/Autoload/LoadGame.gd"
 FXPlayer="*res://Game/Effects/FXPlayer/FXPlayer.tscn"
-Inventory="*res://Game/Global/Inventory/Inventory.gd"
+Inventory="*res://Game/Global/Autoload/Inventory.gd"
+AIServer="*res://Game/Global/Autoload/AIServer.gd"
 
 [debug]
 
@@ -89,12 +108,14 @@ shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
 [display]
 
+mouse_cursor/custom_image="res://Game/Global/Shapes/Red.png"
+mouse_cursor/custom_image_hotspot=Vector2( 11, 11 )
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/kanban_tasks/plugin.cfg", "res://addons/project_map/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/project_map/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg" )
 
 [gdnative]
 
@@ -182,15 +203,22 @@ dash={
 2d_render/layer_3="Enemy"
 2d_render/layer_4="Wall"
 2d_render/layer_5="Floor"
+2d_render/layer_6="Object"
 2d_physics/layer_1="Everything"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Wall"
 2d_physics/layer_5="Floor"
+2d_physics/layer_6="Object"
 
 [physics]
 
+common/physics_fps=120
 common/enable_pause_aware_picking=true
+2d/default_gravity=0
+2d/default_linear_damp=10.0
+2d/default_angular_damp=10.0
+3d/default_gravity=50.0
 
 [rendering]
 

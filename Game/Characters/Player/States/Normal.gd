@@ -10,5 +10,6 @@ func check():
 
 func update(delta):
 	owner.regen(delta)
+	if !Inventory.ability.shoot: return
 	if Input.is_action_pressed("shoot"): owner.weapon.fire(delta)
 

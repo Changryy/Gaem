@@ -100,7 +100,7 @@ comment_rect = Vector2( 740, 161 )
 [node name="GroupNode5" type="GraphNode" parent="." instance=ExtResource( 10 )]
 margin_left = -219.926
 margin_top = 638.591
-margin_right = 72.0682
+margin_right = 72.0558
 margin_bottom = 926.591
 rect_min_size = Vector2( 256, 288 )
 rect_scale = Vector2( 0.68727, 0.68727 )
@@ -469,7 +469,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Global/Shapes/Light.png"
+path = "res://Game/Global/Shapes/Light/Light.png"
 resource_type = 3
 icon_class = "StreamTexture"
 
@@ -526,7 +526,7 @@ icon_class = "Shader"
 [node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 3 )]
 margin_left = -197.934
 margin_top = 704.569
-margin_right = 3.07063
+margin_right = 3.0782
 margin_bottom = 761.57
 rect_scale = Vector2( 0.68727, 0.68727 )
 mouse_filter = 1
@@ -550,7 +550,7 @@ icon_class = "Node2D"
 [node name="FileNode9" type="GraphNode" parent="." instance=ExtResource( 3 )]
 margin_left = -197.934
 margin_top = 748.554
-margin_right = -32.9297
+margin_right = -32.9228
 margin_bottom = 805.554
 rect_scale = Vector2( 0.68727, 0.68727 )
 mouse_filter = 1
@@ -574,7 +574,7 @@ icon_class = "Node"
 [node name="FileNode12" type="GraphNode" parent="." instance=ExtResource( 3 )]
 margin_left = -197.934
 margin_top = 946.488
-margin_right = 60.0713
+margin_right = 60.0782
 margin_bottom = 1003.49
 rect_scale = Vector2( 0.68727, 0.68727 )
 mouse_filter = 1
@@ -592,7 +592,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Global/LoadGame.gd"
+path = "res://Game/Global/Autoload/LoadGame.gd"
 resource_type = 2
 icon_class = "Script"
 
@@ -694,7 +694,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Objects/Loader/ObjectLoader.tscn"
+path = "res://Game/Levels/Objects/Loader/ObjectLoader.tscn"
 icon_class = "Node"
 script_path = "res://Game/Objects/Loader/ObjectLoader.gd"
 script_name = "ObjectLoader.gd"
@@ -720,7 +720,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://Game/Objects/PolyWall.gd"
+path = "res://Game/Levels/Objects/Wall/PolyWall.gd"
 resource_type = 2
 icon_class = "Script"
 

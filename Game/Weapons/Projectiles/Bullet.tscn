@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game/Weapons/Projectiles/Bullet.gd" type="Script" id=1]
 
@@ -18,32 +18,12 @@ data = {
 image = SubResource( 9 )
 size = Vector2( 256, 256 )
 
-[sub_resource type="Gradient" id=8]
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 8 )
-
 [sub_resource type="Curve" id=5]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 5 )
-
-[sub_resource type="ParticlesMaterial" id=4]
-lifetime_randomness = 0.72
-flag_disable_z = true
-direction = Vector3( -1, 0, 0 )
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 256.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-damping = 512.0
-damping_random = 0.71
-scale = 8.0
-scale_random = 0.68
-scale_curve = SubResource( 6 )
-color_ramp = SubResource( 3 )
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0.00225225, 1 )
+colors = PoolColorArray( 1, 1, 0.788235, 1, 1, 1, 1, 0 )
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource( 1 )
@@ -58,18 +38,48 @@ texture_mode = 1
 end_cap_mode = 2
 
 [node name="Ray" type="RayCast2D" parent="."]
+enabled = true
 cast_to = Vector2( 0, 0 )
-collision_mask = 28
+collision_mask = 62
 
 [node name="Poly" type="Polygon2D" parent="."]
 visible = false
 polygon = PoolVector2Array( 6, 0, 5, 2, 3, 4, 1, 5, -4, 6, -7, 6, -14, 5, -21, 3, -28, 0, -21, -3, -14, -5, -7, -6, -4, -6, 1, -5, 3, -4, 5, -2 )
 
-[node name="Particles" type="Particles2D" parent="."]
+[node name="Particles" type="CPUParticles2D" parent="."]
 modulate = Color( 0.403922, 0.207843, 0.45098, 1 )
 z_index = -1
 emitting = false
 lifetime = 3.0
 one_shot = true
 explosiveness = 0.95
-process_material = SubResource( 4 )
+lifetime_randomness = 0.72
+direction = Vector2( -1, 0 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 256.0
+damping = 512.0
+damping_random = 0.71
+scale_amount = 8.0
+scale_amount_random = 0.68
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 8 )
+
+[node name="Spark" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 4
+one_shot = true
+explosiveness = 0.95
+lifetime_randomness = 0.72
+direction = Vector2( -1, 0 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 256.0
+damping = 512.0
+damping_random = 0.71
+scale_amount = 4.0
+scale_amount_random = 0.68
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 8 )
+__meta__ = {
+"_editor_description_": ""
+}

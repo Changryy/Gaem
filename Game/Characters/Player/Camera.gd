@@ -32,7 +32,9 @@ func _process(_delta):
 	if is_shaking: offset = get_shake() + lookahead
 	else: offset = lerp(offset, lookahead, 0.1)
 	zoom = lerp(zoom, target_zoom + Vector2.ONE*lookahead.length()/900, 0.1)
-
+	if Inventory.ability.teleport: return
+	if Inventory.tp_checkpoint and lookahead.y < -150:
+		Inventory.ability.teleport = true
 
 func zoom_to(new_zoom):
 	if new_zoom: target_zoom = new_zoom * default_zoom

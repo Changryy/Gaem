@@ -5,6 +5,7 @@ const WAVE = preload("res://Game/Effects/Shockwave/Shockwave.tscn")
 signal shake_camera(duration, amount)
 signal zoom_camera(new_zoom)
 signal glow(duration, amount)
+signal fade_screen(time, colour)
 
 func shockwave(pos: Vector2, size: float = 1, duration: float = 0.5, power: float = 0.2):
 	var new_wave = WAVE.instance()
@@ -32,3 +33,7 @@ func zoom(new_zoom = 0):
 
 func glow(duration: float = 1, amount: float = 1):
 	emit_signal("glow", duration, amount)
+
+
+func fade(time := 1.0, colour := Color.black):
+	emit_signal("fade_screen", time, colour)
